@@ -4,6 +4,9 @@
 	<meta charset="UTF-8">
 	<title>VideoSearch</title>
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="/img/icon.png" type="image/png">
+	<script src="scr/jquery-2.0.0.min.js"></script>
+	<script src="scr/main.js"></script>
 </head>
 <body>
 	<header>
@@ -44,7 +47,7 @@
 				<p class="description">
 					Here you can find mentions of a word or a phrase in the series
 				</p>
-				<form action="#">
+				<form action="scr/get.py">
 					<p class="search">
 						<input type="search" name="q" placeholder="Input a word or a phrase">
 						<input type="submit" value="Find">
@@ -63,69 +66,7 @@
 					Searching results
 				</h2>
 				<ul id="result-list">
-					<li>
-						<a href="#">result1</a>
-					</li>
-					<li>
-						<a href="#"></a>
-					</li>
-					<li>
-						<a href="#">result3</a>
-					</li>
-					<li>
-						<a href="#">result1</a>
-					</li>
-					<li>
-						<a href="#">result2</a>
-					</li>
-					<li>
-						<a href="#">result3</a>
-					</li>
-					<li>
-						<a href="#">result1</a>
-					</li>
-					<li>
-						<a href="#">result2</a>
-					</li>
-					<li>
-						<a href="#">result3</a>
-					</li>
-					<li>
-						<a href="#">result1</a>
-					</li>
-					<li>
-						<a href="#">result2</a>
-					</li>
-					<li>
-						<a href="#">result3</a>
-					</li>
-					<li>
-						<a href="#">result1</a>
-					</li>
-					<li>
-						<a href="#">result2</a>
-					</li>
-					<li>
-						<a href="#">result3</a>
-					</li>
-					<li>
-						<a href="#">result1</a>
-					</li>
-					<li>
-						<a href="#">result2</a>
-					</li>
-					<li>
-						<a href="#">result3</a>
-					</li>
-					<li>
-						<a href="#">result1</a>
-					</li>
-					<li>
-						<a href="#">result2</a>
-					</li>
-					<li>
-						<a href="#">result3</a>
-					</li>	
+					
 				</div>
 			</div>
 			<div id="video-player">
@@ -133,7 +74,7 @@
 					Season Series
 				</p>
 				<div id="video-tree">
-					<video src="#" width="500" height="400" controls></video>
+					<video id="thevideo" src="http://movies4.fox-fan.ru/video2/M9zWocVBKpU13FhAar8T5g/1558581821/familyguy/3/ren-tv/301.mp4" width="500" height="400" controls></video>
 				</div>
 				<div id="progress-tree">
 					<div id="progress"></div>

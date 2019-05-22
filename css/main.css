@@ -135,12 +135,21 @@ h2 {
 
 #video-player {
 	margin: 0 100px;
+	border-radius: 15px;
 }
 
 #video-name {
 	font-size: 40px;
 	color: #fff;
 	margin: 25px 0;
+}
+
+#video-tree {
+	border-radius: 15px;
+}
+
+video {
+	outline: none;
 }
 /*
 * {

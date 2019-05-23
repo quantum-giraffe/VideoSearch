@@ -5,8 +5,9 @@
 	<title>VideoSearch</title>
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="shortcut icon" href="/img/icon.png" type="image/png">
-	<script src="scr/jquery-2.0.0.min.js"></script>
+	<script src="scr/jquery-3.4.1.js"></script>
 	<script src="scr/main.js"></script>
+	<script src="scr/add_results.js"></script>
 </head>
 <body>
 	<header>
@@ -21,7 +22,14 @@
 						</li>
 						<li>
 							<a href="#">
-								Season
+								<select name="Season">
+									<option disabled autofocus>Season</option> 
+									<script>
+										for (i=1, i<18, i++) {
+											$("select").append("<option value=\"" + i + "\">" + i + "</option>"
+										}
+									</script>script>
+								</select>
 							</a>
 						</li>
 						<li>
@@ -30,12 +38,12 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="about" onclick="scrollTo()">
 								About us
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="#contacts" onclick="scrollTo()">
 								Contacts
 							</a>
 						</li>
@@ -60,21 +68,21 @@
 		</div>
 	</header>
 	<section id=videopage>
-		<div class="container">
-			<div class="results">
-				<h2>
-					Searching results
-				</h2>
-				<ul id="result-list">
-					
+		<div class="conteiner clearfix">
+			<form action="/scr/add_results.js">
+				<div class="results">
+					<h2>
+						Searching results
+					</h2>
+					<ul id="result-list">
+					</ul>
 				</div>
-			</div>
+			</form>
 			<div id="video-player">
 				<p id="video-name">
-					Season Series
 				</p>
 				<div id="video-tree">
-					<video id="thevideo" src="http://movies4.fox-fan.ru/video2/M9zWocVBKpU13FhAar8T5g/1558581821/familyguy/3/ren-tv/301.mp4" width="500" height="400" controls></video>
+					<video id="thevideo" src="http://movies5.fox-fan.ru/video2/lyd3GnS7RIPlCLCrh7oviA/1558608577/familyguy/3/original/301.mp4" width="500" height="400" controls></video>
 				</div>
 				<div id="progress-tree">
 					<div id="progress"></div>
@@ -85,9 +93,14 @@
 			</div>
 		</div>
 	</section>
-	<footer>
+	<section id="about">
 		<div class="container">
-			
+			<p class="about">About us</p>
+		</div>
+	</section>
+		<footer id="contacts">
+		<div class="container">
+			<p class="contacts">Initiative group of students</p>
 		</div>
 	</footer>
 </body>

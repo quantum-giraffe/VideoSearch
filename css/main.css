@@ -38,7 +38,7 @@ nav {
 
 .menu li {
 	display: block;
-	padding-right: 30px;
+	padding-right: 60px;
 	float: left;
 }
 
@@ -50,6 +50,8 @@ select {
 	color: #fff;
 	text-decoration: none;
 	text-transform: uppercase;
+	outline: none;
+	border: none;
 }
 
 select > option {
@@ -59,6 +61,7 @@ select > option {
 	color: #fff;
 	text-decoration: none;
 	text-transform: uppercase;
+	outline: none;	
 }
 
 .menu a {
@@ -141,13 +144,19 @@ h2 {
 
 #result-list li {
 	display: block;
-	width: 400px;
-	border: 1px solid darkgray;
-	margin: 5px;
-	padding: 20px 0;
+
+	margin: 0;
+	margin-right: 100px;
+	padding: 0;
 }
 
-#result-list a {
+#result-list button {
+	background: #666;
+	display: block;
+	width: 400px;
+	margin: 0;
+	margin-right: 100px;
+	padding: 20px 0;
 	font-size: 25px;
 	text-decoration: none;
 	color: #fff;
@@ -201,12 +210,16 @@ footer {
 .about {
 	font-size: 30px;
 	font-weight: bold;
-	color: #ddd;
+	color: #aaa;
 	margin: 50px 0;
 }
 
-
-
+.about_descr {
+	font-size: 20px;
+	color: #444;
+	margin: 50px 0;
+}
+/*
 * {
 	border: 1px solid red;
 }

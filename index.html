@@ -6,10 +6,11 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="shortcut icon" href="/img/icon.png" type="image/png">
 	<script src="scr/jquery-3.4.1.js"></script>
-	<script src="scr/main.js"></script>
-	<script src="scr/add_results.js"></script>
+	
+	
 </head>
 <body>
+	<script src="scr/scroll.js"></script>
 	<header>
 		<div class="container">
 			<div class="heading clearfix">
@@ -17,28 +18,31 @@
 					<ul class="menu">
 						<li>
 							<a href="#">
-								Series
+								<select name="Series">
+									<option autofocus>Series</option> 
+									<option>Family Guy</option> 
+								</select>
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<select name="Season">
-									<option disabled autofocus>Season</option> 
+								<select id="Season" name="Season">
+									<option>Season</option> 
 									<script>
-										for (i=1, i<18, i++) {
-											$("select").append("<option value=\"" + i + "\">" + i + "</option>"
+										for (i=1; i<18; i++) {
+											if (i != 3) {
+												$("#Season").append("<option disabled value=\"" + i + "\">" + i + "(under construction)</option>")
+											}
+											else {
+												$("#Season").append("<option value=\"" + i + "\">" + i + "</option>")
+											}
 										}
 									</script>script>
 								</select>
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								Popular requests
-							</a>
-						</li>
-						<li>
-							<a href="about" onclick="scrollTo()">
+							<a href="#about" onclick="scrollTo()">
 								About us
 							</a>
 						</li>
@@ -55,7 +59,8 @@
 				<p class="description">
 					Here you can find mentions of a word or a phrase in the series
 				</p>
-				<form action="scr/get.py">
+				<script src="scr/main.js"></script>
+				<form onsubmit="get_params(this);return '#videopage'">
 					<p class="search">
 						<input type="search" name="q" placeholder="Input a word or a phrase">
 						<input type="submit" value="Find">
@@ -69,15 +74,16 @@
 	</header>
 	<section id=videopage>
 		<div class="conteiner clearfix">
-			<form action="/scr/add_results.js">
+			
 				<div class="results">
 					<h2>
 						Searching results
 					</h2>
 					<ul id="result-list">
+						<script src="scr/add_results.js"></script>
 					</ul>
 				</div>
-			</form>
+			
 			<div id="video-player">
 				<p id="video-name">
 				</p>
@@ -96,6 +102,7 @@
 	<section id="about">
 		<div class="container">
 			<p class="about">About us</p>
+			<p class="about_descr">A team of young yet ambitious developers. Will agree with an excellent(8).</p>
 		</div>
 	</section>
 		<footer id="contacts">

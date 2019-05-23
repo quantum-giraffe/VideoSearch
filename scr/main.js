@@ -1,44 +1,26 @@
+function include(url) {
+        var script = document.createElement('script');
+        script.src = url;
+        document.getElementsByTagName('head')[0].appendChild(script);
+    }
 
-function add_results(results) 
+include("parser.py")
+
+$.ajax({
+	type: "GET"
+	url: "parser.py"
+	data: q
+})
+
+function get_params(form)
 {
-	if (results) {
-		for (result in results) {
-			$("#result-list").append("<li><a href=\"" + 
-				result[0] + "\" onclick=\"current_video(" + 
-				result + ")\">" + result[1] + "</a></li>");
-		}
-	}
-	else {
-		$("#result-list").append("<p class=\"notfind\">Sorry, nothing found</p>")
-	}
-}
-
-function current_video(result)
-{
-	$("#video-name").append(result[1]);
-
-	var vid = document.getElementById("thevideo");
-	
-	vid.src = result[1];
-	vid.currentTime = result[2][0];
-	
-	while (vid.currentTime < result[2][1]);
-	if (vid.played) {
-		vid.pause();
-	} 
-}
-
-function get () 
-{
-
-}
-
-function scrollTo() {
-	var $href = $(this).attr('href');
-    var $anchor = $('#'+$href).offset();
-	$('body').animate({ scrollTop: $anchor.top });
-	return false;
+    q = form.elements[0].value;
+    $.ajax({
+		type: "GET"
+		url: "parser.py"
+		data: {param: q}
+	}).done(main(q));
 }
 
 
-#videopage
+

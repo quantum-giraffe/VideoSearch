@@ -1,23 +1,26 @@
+function include(url) {
+        var script = document.createElement('script');
+        script.src = url;
+        document.getElementsByTagName('head')[0].appendChild(script);
+    }
 
-function add_results(results) 
+include("parser.py")
+
+$.ajax({
+	type: "GET"
+	url: "parser.py"
+	data: q
+})
+
+function get_params(form)
 {
-	for (result in results) {
-		$("#result-list").append("<li><a href=\"" + 
-			result[0] + "\">" + result[1] + "</a></li>");
-	}
+    q = form.elements[0].value;
+    $.ajax({
+		type: "GET"
+		url: "parser.py"
+		data: {param: q}
+	}).done(main(q));
 }
 
-function current_video(result)
-{
-	$("#video-name").append(result[1]);
 
-	var vid = document.getElementById("thevideo");
-	
-	vid.src = result[1];
-	vid.currentTime = result[2][0];
-	
-	while (vid.currentTime < result[2][1]);
-	if (vid.played) {
-		vid.pause();
-	} 
-}
+

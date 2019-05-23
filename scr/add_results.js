@@ -1,5 +1,4 @@
-results = [["http://movies1.fox-fan.ru/video2/mpYl2VyWoOknw2gjLVepwA/1558640143/familyguy/3/ren-tv/301.mp4", 'series', [50,68]],
-['http://movies5.fox-fan.ru/video2/iO0AaOnZzk4GAavj4sOB0A/1558654902/familyguy/3/original/302.mp4', 'series2', [1291.0,1294.0]]]
+results = [["http://movies1.fox-fan.ru/video2/mpYl2VyWoOknw2gjLVepwA/1558640143/familyguy/3/ren-tv/301.mp4", 'series', [50,68]]]
 
 function current_video(scr, name, time0, time1)
 {

@@ -100,3 +100,7 @@ def main(desired_word: str, season=3, size=10):
                 ans.append([file_link, series, start_end[0], start_end[1]])
     ans = [ans[i] for i in random.sample(range(len(ans)), size)]
     return ans
+
+
+desired_word = input()
+main(desired_word)
